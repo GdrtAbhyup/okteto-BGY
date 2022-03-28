@@ -1,0 +1,4 @@
+deploy:
+  - okteto build -t okteto.dev/ray:latest
+  - kubectl apply -f service.yml
+  - envsubst < deployment.yaml | kubectl apply -f -
